@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 
-const BASE = "http://localhost:4000/api";
+const BASE = "https://expense-tracker-frontend-zipm.onrender.com/api";
 
 export default function History() {
   const { token } = useAuth();
