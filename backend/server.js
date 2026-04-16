@@ -37,10 +37,7 @@ app.use("/api/dashboard", dashboardRouter);
 
 connectDB();
 
-if (process.env.NODE_ENV !== "production") {
-  app.listen(port, () => {
-    console.log(`Server running on ${port}`);
-  });
-}
-
-export default app;
+app.listen(port, ()=>{
+  console.log(`Server is running on ${port}`);
+  
+})
