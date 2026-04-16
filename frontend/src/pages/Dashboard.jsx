@@ -6,7 +6,7 @@ import Income from "../components/Income";
 import Expense from "../components/Expense";
 import Budget from "../components/Budget";
 
-const BASE = "http://localhost:4000/api";
+const BASE = "https://expense-tracker-frontend-zipm.onrender.com/api";
 const FREQUENCIES = ["One-time", "Weekly", "Monthly", "Yearly"];
 const emptyForm = { source: "", amount: "", frequency: "monthly", date: "" };
 const EXPENSE_CATEGORIES = [
