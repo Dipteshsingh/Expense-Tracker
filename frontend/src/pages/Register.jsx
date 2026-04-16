@@ -30,7 +30,7 @@ const Register = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/auth/register",
+        "http://https://expense-tracker-frontend-zipm.onrender.com/api/auth/register",
         formData
       );
 
