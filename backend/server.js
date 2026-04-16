@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended:true}));
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://expense-tracker-frontend-zipm.onrender.com",
     credentials: true,
   })
 );
