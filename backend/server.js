@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "https://expense-tracker-frontend-zipm.onrender.com",
+    origin: "https://expense-tracker-frontend1-9fax.onrender.com",
     credentials: true,
   })
 );
