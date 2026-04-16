@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "https://expense-tracker-frontend1-9fax.onrender.com",
+    origin: "*",
     credentials: true,
   })
 );
