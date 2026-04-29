@@ -24,11 +24,12 @@ const Login = () => {
     }));
   };
 
+
   const handleSubmit = async (e) => {
   e.preventDefault();
   setLoading(true);
   setMessage("");
-
+  
   try {
     const res = await axios.post(
       "https://expense-tracker-server4.onrender.com/api/auth/login",
@@ -49,7 +50,12 @@ const Login = () => {
     setLoading(false);
   }
 };
-
+const validation = async () =>{
+  if (login == valid) {
+    setLoading(false)
+    alert("Something went wrong try after sometime")
+  }
+}
   return (
   <div className="min-h-screen bg-gray-950 flex items-center justify-center px-4 py-10">
     <div className="w-full max-w-md rounded-3xl bg-gray-900 border border-gray-800 shadow-2xl p-8 md:p-10">
@@ -113,13 +119,15 @@ const Login = () => {
           </div>
         )}
 
-        <button
+        {valid ? <p>Something went wrong</p>: <button
+        
           type="submit"
           disabled={loading}
           className="w-full rounded-2xl bg-indigo-600 hover:bg-indigo-500 px-4 py-3.5 text-sm font-semibold text-white transition-all duration-200 shadow-lg shadow-indigo-900/30 disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {loading ? "Logging in..." : "Login"}
-        </button>
+        </button>}
+        
       </form>
 
       <p className="mt-6 text-center text-sm text-gray-500">

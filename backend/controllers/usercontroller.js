@@ -46,7 +46,7 @@ const register =async (req, res) =>{
         firstName: user.firstName, 
         lastName: user.lastName, 
         email: user.email },
-      token
+        token
     });
 
   } catch (error) {
@@ -66,6 +66,7 @@ const login = async (req, res) =>{
         message: 'User not found',
       });
     }
+    
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({

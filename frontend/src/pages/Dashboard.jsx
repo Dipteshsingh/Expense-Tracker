@@ -5,6 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import Income from "../components/Income";
 import Expense from "../components/Expense";
 import Budget from "../components/Budget";
+import { Lightbulb } from "lucide-react";
 
 const BASE = "https://expense-tracker-server4.onrender.com/api";
 const FREQUENCIES = ["One-time", "Weekly", "Monthly", "Yearly"];
@@ -58,6 +59,7 @@ const Dashboard = () => {
   const config = { headers: { Authorization: `Bearer ${token}` } };
   const [showBudgetForm, setShowBudgetForm] = useState(false);
   const [budgetForm, setBudgetForm] = useState(emptyBudgetForm);
+
 
   // Fetch 
   const fetchDashboardData = async () => {
@@ -239,6 +241,8 @@ const addBudget = async (e) => {
   }
 };
 
+
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-950 flex items-center justify-center">
@@ -253,15 +257,20 @@ const addBudget = async (e) => {
   const { totalIncome, totalExpense, remainBalance } = summary;
   const isPositive = remainBalance >= 0;
 
+
+
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100 px-6 py-10 font-sans">
       <div className="max-w-5xl mx-auto space-y-10">
-
+        
         {/* Header */}
         <div className="border-b border-gray-800 pb-6">
           <p className="text-xs uppercase tracking-widest text-indigo-400 mb-1">Overview</p>
           <h1 className="text-3xl font-bold text-white">Dashboard</h1>
+
         </div>
+
+
 
         {/* Summary Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

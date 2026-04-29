@@ -6,6 +6,7 @@ const Expense = ({ expenses = [], onUpdate, onDelete }) => {
     (sum, exp) => sum + Number(exp.amount || 0),
     0
   );
+  
 
   return (
     <div className="space-y-4">
@@ -32,7 +33,11 @@ const Expense = ({ expenses = [], onUpdate, onDelete }) => {
                 <p className="text-white font-medium capitalize">
                   {expense.category}
                 </p>
-
+                <span>{expense.amount}</span>
+                {/* Condition */}
+                {expense.amount > 10000 && (
+                  <span className="text-red-500 text-xs ml-2">Limit Exceeded</span>
+                )}
                 <div className="flex gap-3 mt-1 flex-wrap">
                   <span className="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded-full capitalize">
                     {expense.description || "No description"}
